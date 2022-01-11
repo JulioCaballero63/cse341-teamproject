@@ -7,7 +7,7 @@
  * Throughout the course, we'll be using Express.js for our view engines.
  * However, feel free to use pug or handlebars ('with extension hbs'). You will
  * need to make sure you install them beforehand according to the reading from
- * Udemy course. test
+ * Udemy course.
  * IMPORTANT: Make sure to run "npm install" in your root before "npm start"
  *******************************************************************************/
 // Our initial setup (package requires, port number setup)
