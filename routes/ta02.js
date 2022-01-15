@@ -3,13 +3,38 @@
 const express = require('express');
 const router = express.Router();
 
+// const users = [];
+const userArray = ['Jack', 'Jill', 'Brian'];
+
+router.post('/addUser', (req, res, next) => {
+  // users.push({ name: req.body.newUser });
+  const newUser = req.body.username;
+
+  userArray.push(newUser);
+  res.redirect('/ta02');
+});
+
+
+router.post('/removeUser', (req, res, next) => {
+  const remUser = req.body.remUser;
+
+  // Splice method removes from a const array
+  const index = userArray.indexOf(remUser);
+  if (index !== -1) {
+    userArray.splice(index, 1);
+  }
+
+  res.redirect('/ta02/');
+});
+
 router.get('/', (req, res, next) => {
-  res.render('pages', {
+  res.render('pages/ta02', {
     title: 'Team Activity 02',
-    path: '/ta02', // For pug, EJS
-    activeTA03: true, // For HBS
-    contentCSS: true, // For HBS
+    users: userArray,
+    path: '/ta02',
   });
 });
 
 module.exports = router;
+// exports.routes = router;
+// exports.users = users;

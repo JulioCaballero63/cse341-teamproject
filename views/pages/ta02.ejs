@@ -7,17 +7,51 @@
 
 <body>
   <% include ../includes/nav.ejs %>
-    <div class="jumbotron text-center">
-      <div class="container">
-        <h1>
-          <%= title %>
-        </h1>
-        <p>This is the placeholder for Team Activity 02</p>
-      </div>
-    </div>
+  <div class="jumbotron text-center">
     <div class="container">
+      <h1>
+        <%= title %>
+      </h1>
+      <p>This is the placeholder for Team Activity 02</p>
+      <!-- add user -->
+      <form action="/ta02/addUser" method="POST">
+        <label for="username">New Username</label><br>
+        <input class="input" type="text" name="username">
+        <button class="button" type="submit">Add User</button>
+      </form>
+
+      <!-- remove user -->
+      <div>
+        <!-- Form for requirement 03 -->
+        <form action="/ta02/removeUser" method="POST">
+          <label for="remUser">Username to remove</label><br>
+          <input class="input" type="text" name="remUser">
+          <button class="button" type="submit">Remove User</button>
+        </form>
+        <!-- Form for requirement 03 -->
+      </div>
 
     </div>
+    <div class="container">
+      <h1>Users</h1>
+      <% if (users.length > 0) { %>
+      <ul>
+        <% users.forEach((user) => { %>
+        <p>
+          <%= user %>
+        </p>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <h1>No Users Found!</h1>
+      <% } %>
+    </div>
+
+
+  </div>
+  <div class="container">
+
+  </div>
 
 
 </body>

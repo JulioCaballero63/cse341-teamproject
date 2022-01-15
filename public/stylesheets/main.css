@@ -19,7 +19,7 @@
   margin: 1em auto 2em;
 }
 
-.navbar + .jumbotron {
+.navbar+.jumbotron {
   margin-top: -20px;
 }
 
@@ -33,6 +33,7 @@
   margin: auto;
   border: 2px solid white;
 }
+
 .jumbotron .lang-logo img {
   max-width: 100%;
 }
@@ -40,4 +41,12 @@
 .logo {
   width: 5rem;
   height: 5rem;
+}
+
+.button {
+  background-color: gray;
+}
+
+.input {
+  color: black
 }
