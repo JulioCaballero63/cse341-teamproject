@@ -14,16 +14,12 @@ router.get('/', (req, res, next) => {
     });
     response.on('end', function () {
       const jsonResponse = JSON.parse(body);
-      // console.log("Got a response: ", jsonResponse[0].name);
-
       const data = jsonResponse
-
       res.render('pages/ta03', {
         data,
         title: 'Team Activity 03',
         path: '/ta03'
       });
-
     });
   }); response.on('error', function (e) {
     console.log("Got an error: ", e);
